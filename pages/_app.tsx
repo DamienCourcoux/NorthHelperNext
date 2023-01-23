@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
         loading ? <Loader message="Chargement..." /> : (
           <>
             <style jsx global>
-              {`html {font-family: ${quicksand.style.fontFamily};} .northgarden {font-family: ${berkshireSwash.style.fontFamily}}`}
+              {`html {font-family: ${quicksand.style.fontFamily};} .northhelper {font-family: ${berkshireSwash.style.fontFamily}}`}
             </style>
             <Provider store={store}>
               <Component {...pageProps} />
