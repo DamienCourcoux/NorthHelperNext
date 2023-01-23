@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 import { createHandleLogout } from '../../../../../redux/reducer/reducerAdmin';
 
-import petitBonhommeSolo from '../../../../../public/petitBonhommeSolo.png';
+import petitBonhommeSolo from '../../../../../public/PetitBonhommeSolo.png';
 
 import { FaUserTimes } from 'react-icons/fa';
 

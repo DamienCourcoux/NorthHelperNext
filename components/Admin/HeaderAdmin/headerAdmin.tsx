@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 
 import { createHandleLogout } from '../../../redux/reducer/reducerAdmin';
 
-import petitBonhommeSolo from '../../../public/petitBonhommeSolo.png';
+import petitBonhommeSolo from '../../../public/PetitBonhommeSolo.png';
 
 import { FaHome, FaBoxes, FaUser, FaUserTimes } from 'react-icons/fa';
 import { HiClipboardList } from 'react-icons/hi';
