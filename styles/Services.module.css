@@ -1,0 +1,131 @@
+.packs {
+    width: 100%;
+    margin: .1rem 0;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 1rem;
+    margin: 0 1rem;
+    background-color: rgba(0, 0, 0, .7);
+    cursor: pointer;
+}
+
+.title:hover {
+    color: #f7ac45;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #f7ac45;
+    padding: 1rem;
+    margin: 1rem;
+    width: 350px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 0px rgb(0 0 0 / 75%);
+    position: relative;
+    transition: all 1.5s ease-out;
+}
+
+.serviceTitle {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: .5rem;
+}
+
+.serviceTitle svg {
+    margin: .5rem;
+}
+
+.serviceTitle svg:nth-child(2) {
+    margin-left: -.5rem;
+    margin-right: .5rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    height: 100%;
+    min-height: 100px;
+    background-color: #e9d2a7;
+    margin: .5rem 0 1rem 0;
+    color: #000;
+    border-radius: 10px;
+    padding: .5rem;
+    cursor: default;
+    text-align: left;
+}
+
+.list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+    background: #f7efe6;
+    padding: .5rem;
+    border-radius: .5rem;
+    height: calc(100% - .25rem);
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+}
+
+.priceCountUp {
+    text-decoration: none;
+    font-weight: bold;
+    color: #f7ac45;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.name em,
+.price span,
+.movement em {
+    font-size: .8rem;
+    font-style: italic;
+    color: #00000050;
+    text-shadow: 0 0 1px #00000050;
+}
+
+
+.price span {
+    font-weight: bold;
+}
+
+.info {
+    margin: 0 auto;
+}
+
+.btnMecontacter {
+    color: #f7ac45;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.btnMecontacter:hover {
+    text-decoration: underline;
+}
