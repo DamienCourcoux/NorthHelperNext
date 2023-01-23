@@ -12,7 +12,7 @@ type Admin = {
     password: string
 }
 
-import PetitBonhommeSolo from '../../../public/PetitBonhommeSolo.png';
+import PetitBonhommeSolo from '../../../public/petitBonhommeSolo.png';
 
 import Field from '../../Field/field';
 
