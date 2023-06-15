@@ -18,10 +18,10 @@ export default function LayoutPage({ children, title, startProject, error }: Pro
 
                         <div className={styles.contactHead}>
                             <h1 className={`${styles.contactTitle} northhelper`}>Me Contacter</h1>
-                            <p className={styles.contactSubtitle}>
+                            {/* <p className={styles.contactSubtitle}>
                                 <span className={styles.contactSubtitleLeft}>Des questions ?</span>
                                 <span className={styles.contactSubtitleRight}>Ecrivez-moi un message !</span>
-                            </p>
+                            </p> */}
                         </div>
                     )
             }

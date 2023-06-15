@@ -14,7 +14,7 @@
     color: #fff;
     border-radius: .5rem;
     padding: 1rem;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -45,11 +45,11 @@
     text-decoration: underline;
 }
 
-.informationop li a:hover {
+.informationTop li a:hover {
     color: #d4d4d4;
 }
 
-.informationop li svg {
+.informationTop li svg {
     margin-right: .5rem;
 }
 

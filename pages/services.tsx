@@ -5,48 +5,49 @@ import LayoutPage from '../components/layoutPage';
 import NavLink from '../components/navlink';
 import CountUp from 'react-countup';
 import { useState } from 'react';
-import Loader from '../components/Loader/loader';
-import { useQuery } from 'react-query';
+// import Loader from '../components/Loader/loader';
+// import { useQuery } from 'react-query';
 
-import { getPacks } from '../lib/requestApiPacks';
-import { getServices } from '../lib/requestApiServices';
+// import { getPacks } from '../lib/requestApiPacks';
+// import { getServices } from '../lib/requestApiServices';
+import { packs } from '../lib/seed';
 
 import { GiShakingHands, GiToolbox } from 'react-icons/gi';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import { FiAlertTriangle } from 'react-icons/fi'
 
-type Packs = {
-    _id: string,
-    name: string,
-    services: string
-}
+// type Packs = {
+//     _id: string,
+//     name: string,
+//     services: string
+// }
 
-type Services = {
-    _id: string,
-    name: string,
-    example: string,
-    price: number,
-    priceDetails: string,
-    packsId: string,
-}
+// type Services = {
+//     _id: string,
+//     name: string,
+//     example: string,
+//     price: number,
+//     priceDetails: string,
+//     packsId: string,
+// }
 
 export default function Services() {
     const categories = ["Aides", "Services"];
 
-    const [clicked, setClicked] = useState(false);
+    const [clicked, setClicked] = useState(-1);
 
-    const { isLoading: isLoadingPacks, isError: isErrorPacks, data: packs, error: errorPacks } = useQuery<Packs[] | any>('packs', getPacks);
-    const { isLoading: isLoadingServices, isError: isErrorServices, data: services, error: errorServices } = useQuery<Services[] | any>('services', getServices);
+    // const { isLoading: isLoadingPacks, isError: isErrorPacks, data: packs, error: errorPacks } = useQuery<Packs[] | any>('packs', getPacks);
+    // const { isLoading: isLoadingServices, isError: isErrorServices, data: services, error: errorServices } = useQuery<Services[] | any>('services', getServices);
 
-    if (isLoadingPacks) return <Loader message='Les packs chargent...' />;
-    if (isErrorPacks) return <div>J&apos;ai eu une erreur {`${errorPacks}`}</div>;
+    // if (isLoadingPacks) return <Loader message='Les packs chargent...' />;
+    // if (isErrorPacks) return <div>J&apos;ai eu une erreur {`${errorPacks}`}</div>;
 
-    if (isLoadingServices) return <Loader message='Les services chargent...' />;
-    if (isErrorServices) return <div>J&apos;ai eu une erreur {`${errorServices}`}</div>;
+    // if (isLoadingServices) return <Loader message='Les services chargent...' />;
+    // if (isErrorServices) return <div>J&apos;ai eu une erreur {`${errorServices}`}</div>;
 
-    const toggle = (index: boolean | ((prevState: boolean) => boolean)) => {
+    const toggle = (index: number) => {
         if (clicked === index) {
-            return setClicked(false);
+            return setClicked(-1);
         }
         setClicked(index);
     }
@@ -68,22 +69,22 @@ export default function Services() {
                                 clicked === index ? (
                                     <div className={styles.box}>
                                         {
-                                            packs.map((pack: Packs) => (
+                                            packs.map((pack) => (
                                                 pack.name.match(/Aide/i) && index === 0 ? (
-                                                    <div key={pack._id} className={styles.service}>
+                                                    <div key={pack.id} className={styles.service}>
                                                         <h3 className={styles.serviceTitle}><GiShakingHands /> {pack.name}</h3>
                                                         <ul className={styles.list}>
                                                             {
-                                                                services.map((service: Services) => (
-                                                                    pack.services.includes(service._id) ? (
-                                                                        <li key={service._id}>
+                                                                pack.services.map((service) => (
+                                                                    // pack.services.includes(service._id) ? (
+                                                                        <li key={service.id}>
                                                                             <p className={styles.name}>{service.name} {service.example ? <em>ex : {service.example}</em> : ''}</p>
                                                                             <p className={styles.price}>
                                                                                 <CountUp className={styles.priceCountUp} end={service.price} suffix=" €" decimals={2} decimal="," />
                                                                                 {service.priceDetails ? <span> {service.priceDetails}</span> : ''}
                                                                             </p>
                                                                         </li>
-                                                                    ) : ''
+                                                                    // ) : ''
                                                                 ))
                                                             }
                                                         </ul>
@@ -92,20 +93,20 @@ export default function Services() {
                                                         </div>
                                                     </div>
                                                 ) : pack.name.match(/Service/i) && index === 1 ? (
-                                                    <div key={pack._id} className={styles.service}>
+                                                    <div key={pack.id} className={styles.service}>
                                                         <h3 className={styles.serviceTitle}><GiToolbox /> {pack.name}</h3>
                                                         <ul className={styles.list}>
                                                             {
-                                                                services.map((service: Services) => (
-                                                                    pack.services.includes(service._id) ? (
-                                                                        <li key={service._id}>
+                                                                pack.services.map((service) => (
+                                                                    // pack.services.includes(service._id) ? (
+                                                                        <li key={service.id}>
                                                                             <p className={styles.name}>{service.name} {service.example ? <em>ex : {service.example}</em> : ''}</p>
                                                                             <p className={styles.price}>
                                                                                 <CountUp className={styles.priceCountUp} end={service.price} suffix=" €" decimals={2} decimal="," />
                                                                                 {service.priceDetails ? <span> {service.priceDetails}</span> : ''}
                                                                             </p>
                                                                         </li>
-                                                                    ) : ''
+                                                                    // ) : ''
                                                                 ))
                                                             }
                                                         </ul>
